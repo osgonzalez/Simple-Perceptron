@@ -109,8 +109,7 @@ public class Perceptron {
 		StringBuilder log = new StringBuilder();
 		log.append(" -------- Recalculando -------- ");
 
-		//double error = outputEsperado - outputObtenido;
-		double error = outputObtenido - outputEsperado;
+		double error = outputEsperado - outputObtenido;
 		
 		log.append("\nError = " + error);
 		
@@ -118,12 +117,12 @@ public class Perceptron {
 			
 			log.append("\n peso["+i+"] = " + this.pesos[i]);
 			
-			pesos[i] = pesos[i] + TASA_APRENDIZAJE * error;
+			pesos[i] = pesos[i] + TASA_APRENDIZAJE * error * inputs[i];
 			
 			log.append(" => " + this.pesos[i]);
 		}
 		
-//		System.out.println(log.toString());
+		System.out.println(log.toString());
 	}
 	
 }
